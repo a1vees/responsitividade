@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria Responsiva</title>
+    <style>
+        /* Estilo global */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: #fff;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 2rem;
+            color: #fff;
+        }
+
+        /* Estilo da galeria */
+        .gallery {
+            display: grid;
+            gap: 15px; /* Espaçamento entre as imagens */
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto; /* Centraliza a galeria */
+        }
+
+        /* Imagens da galeria */
+        .gallery img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 10px; /* Bordas arredondadas */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destaque */
+            transition: transform 0.3s, box-shadow 0.3s; /* Efeitos suaves */
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05); /* Zoom ao passar o mouse */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Aumenta a sombra no hover */
+        }
+
+        /* Grade para telas maiores que 768px */
+        @media (min-width: 768px) {
+            .gallery {
+                grid-template-columns: repeat(3, 1fr); /* 3 colunas iguais */
+            }
+        }
+
+        /* Grade para telas entre 480px e 768px */
+        @media (max-width: 768px) and (min-width: 480px) {
+            .gallery {
+                grid-template-columns: repeat(2, 1fr); /* 2 colunas iguais */
+            }
+        }
+
+        /* Grade para telas menores que 480px */
+        @media (max-width: 480px) {
+            .gallery {
+                grid-template-columns: 1fr; /* 1 coluna */
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Galeria Responsiva</h1>
+    <div class="gallery">
+        <img src="ben10.jpg" alt="Descrição da imagem 1">
+        <img src="cachorro.jpg" alt="Descrição da imagem 2">
+        <img src="cadeira.jpg" alt="Descrição da imagem 3">
+        <img src="perfume.jpg" alt="Descrição da imagem 4">
+        <img src="teclado.png" alt="Descrição da imagem 5">
+        <img src="minigun.jpg" alt="Descrição da imagem 6">
+    </div>
+</body>
+</html>
